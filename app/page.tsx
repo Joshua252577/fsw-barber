@@ -47,18 +47,18 @@ const Home = async () => {
         </Button>
 
         <Button className="gap-2" variant="secondary">
-          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
-          Acabamento
+          <Image alt="Sobrancelha" src="/sobrancelha.svg" width={16} height={16}/>
+          Sobrancelha
         </Button>
         
         <Button className="gap-2" variant="secondary">
-          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
-          Acabamento
+          <Image alt="Massagem" src="/massagem.svg" width={16} height={16}/>
+          Massagem
         </Button>
         
         <Button className="gap-2" variant="secondary">
-          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
-          Acabamento
+          <Image alt="Hidratação" src="/hidratacao.svg" width={16} height={16}/>
+          Hidratação
         </Button>
 
       </div>
