@@ -11,6 +11,11 @@ import BarbershopItem from "./_components/barbershop-item"
 
 const Home = async () => {
   const barbershop = await db.barbershop.findMany({});
+  const popularBarbershop = await db.barbershop.findMany({
+    orderBy: {
+      name: "desc",
+    }
+  })
 
   return <div>
     <Header/>
@@ -23,6 +28,39 @@ const Home = async () => {
         <Button>
           <SearchIcon/>
         </Button>
+      </div>
+
+      <div className="flex gap-3 mt-6 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Cabelo" src="/cabelo.svg" width={16} height={16}/>
+          Cabelo
+        </Button>
+
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Barba" src="/barba.svg" width={16} height={16}/>
+          Barba
+        </Button>
+
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
+          Acabamento
+        </Button>
+
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
+          Acabamento
+        </Button>
+        
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
+          Acabamento
+        </Button>
+        
+        <Button className="gap-2" variant="secondary">
+          <Image alt="Acabamento" src="/acabamento.svg" width={16} height={16}/>
+          Acabamento
+        </Button>
+
       </div>
 
       <div className="relative w-full h-[150px] mt-6">
@@ -69,7 +107,25 @@ const Home = async () => {
           <BarbershopItem key={barbershop.id} barbershop={barbershop}/>
         ))}
       </div>
+
+      <h2 className="mt-6 mb-3 text-sm uppercase font-bold text-gray-400">
+        Populares
+      </h2>
+
+      <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+        {popularBarbershop.map((barbershop) => (
+          <BarbershopItem key={barbershop.id} barbershop={barbershop}/>
+        ))}
+      </div>
     </div>
+
+    <footer>
+      <Card>
+        <CardContent className="px-5 py-6">
+          <p className="text-sm text-gray-400">© 2023 Copyright <span className="font-bold">FSW Barber</span></p>
+        </CardContent>
+      </Card>
+    </footer>
   </div>
 }
 
